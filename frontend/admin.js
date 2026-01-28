@@ -3,7 +3,7 @@
  */
 
 // API基础URL - 从环境变量或全局配置读取，默认为truebody.zeabur.app/api/admin
-let API_BASE_URL = 'https://truebody.zeabur.app/api/admin';
+let API_BASE_URL = 'http://121.41.109.106:3000/api/admin';
 
 // 检查是否有全局配置
 if (window && window.appConfig && window.appConfig.apiUrl) {
@@ -640,7 +640,7 @@ function stopCrawling() {
 // 加载分类树结构
 function loadCategoryTree() {
     // 构建分类API地址
-    let categoriesApiUrl = 'https://truebody.zeabur.app/api/categories';
+    let categoriesApiUrl = import.meta.env.VITE_API_URL+'/api/categories';
     
     // 检查是否有全局配置
     if (window && window.appConfig && window.appConfig.apiUrl) {
