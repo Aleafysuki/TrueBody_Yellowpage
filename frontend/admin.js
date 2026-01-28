@@ -2,8 +2,17 @@
  * 名片管理系统 - 管理界面JavaScript
  */
 
-// 后端API基础URL
-const API_BASE_URL = 'http://localhost:3000/api/admin';
+// API基础URL - 从环境变量或全局配置读取，默认为truebody.zeabur.app/api/admin
+let API_BASE_URL = 'https://truebody.zeabur.app/api/admin';
+
+// 检查是否有全局配置
+if (window && window.appConfig && window.appConfig.apiUrl) {
+    API_BASE_URL = `${window.appConfig.apiUrl}/api/admin`;
+}
+// 检查是否有环境变量（如果使用构建工具）
+else if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) {
+    API_BASE_URL = `${import.meta.env.VITE_API_URL}/api/admin`;
+}
 
 // DOM元素
 let cardsTableBody;
@@ -630,8 +639,20 @@ function stopCrawling() {
 
 // 加载分类树结构
 function loadCategoryTree() {
+    // 构建分类API地址
+    let categoriesApiUrl = 'https://truebody.zeabur.app/api/categories';
+    
+    // 检查是否有全局配置
+    if (window && window.appConfig && window.appConfig.apiUrl) {
+        categoriesApiUrl = `${window.appConfig.apiUrl}/api/categories`;
+    }
+    // 检查是否有环境变量（如果使用构建工具）
+    else if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) {
+        categoriesApiUrl = `${import.meta.env.VITE_API_URL}/api/categories`;
+    }
+    
     $.ajax({
-        url: '/api/categories',
+        url: categoriesApiUrl,
         method: 'GET',
         dataType: 'json',
         success: function(data) {
