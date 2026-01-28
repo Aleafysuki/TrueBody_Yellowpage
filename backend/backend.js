@@ -39,9 +39,6 @@ const DB_CONFIG = {
     }
 };
 
-// q: 配置CORS中间件
-const cors = require('cors');
-
 // 允许你的 Vercel 前端域名访问
 app.use(cors({
   origin: 'https://yellowpageapp.vercel.app', // 或者用 '*' 允许所有（不建议用于生产）
