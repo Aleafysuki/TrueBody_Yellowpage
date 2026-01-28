@@ -1,0 +1,6 @@
+-- 直接添加分类列到TestTable表
+
+ALTER TABLE TestTable ADD CategoryLevel1 NVARCHAR(100) NULL;
+ALTER TABLE TestTable ADD CategoryLevel2 NVARCHAR(100) NULL;
+ALTER TABLE TestTable ADD CategoryLevel3 NVARCHAR(100) NULL;
+ALTER TABLE TestTable ADD CategoryPath NVARCHAR(255) NULL;

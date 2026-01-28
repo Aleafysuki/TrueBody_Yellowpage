@@ -1,0 +1,23 @@
+# 环境变量文件
+.env
+
+# Node.js依赖
+node_modules/
+
+# 日志文件
+logs
+*.log
+
+# 编译输出
+build/
+dist/
+
+# 编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db

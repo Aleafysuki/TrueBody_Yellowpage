@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名片黄页</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 固定顶部导航栏 -->
+        <div id="top-navbar" class="top-navbar">
+            <!-- 浅色深色模式切换按键 -->
+            <div class="theme-toggle-container">
+                <span class="theme-toggle-text">深色模式</span>
+                <label class="theme-toggle">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            
+            <!-- 搜索框和按钮 -->
+            <div class="top-search-container">
+                <input type="text" id="search-input" placeholder="搜索关键词...">
+                <button id="search-btn">搜索</button>
+            </div>
+        </div>
+        
+        <!-- 搜索结果区域 -->
+        <div id="results-section" class="results-section">
+            <div class="search-results">
+                <!-- 最合适的搜索结果 -->
+                <div id="primary-result" class="primary-result"></div>
+                
+                <!-- 点击内容展示区域 -->
+                <div id="click-details" class="click-details"></div>
+                
+                <!-- 其他搜索结果 -->
+                <div id="secondary-results" class="secondary-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚信息 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <span>备案信息：京ICP备XXXXXX号</span>
+            <span> | </span>
+            <span>用户协议</span>
+            <span> | </span>
+            <span>隐私政策</span>
+        </div>
+    </footer>
+
+    <!-- 错误上报模态框 -->
+    <div id="report-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>错误上报</h3>
+            <p>请描述您发现的问题：</p>
+            <textarea id="report-text" rows="4" placeholder="请详细描述您发现的错误..."></textarea>
+            <button id="submit-report">提交</button>
+        </div>
+    </div>
+
+    <!-- 提示消息 -->
+    <div id="toast" class="toast"></div>
+
+    <!-- 前端API服务，通过后端获取数据 -->
+    <script src="api-service.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
