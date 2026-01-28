@@ -39,6 +39,16 @@ const DB_CONFIG = {
     }
 };
 
+// q: 配置CORS中间件
+const cors = require('cors');
+
+// 允许你的 Vercel 前端域名访问
+app.use(cors({
+  origin: 'https://yellowpageapp.vercel.app', // 或者用 '*' 允许所有（不建议用于生产）
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
+
 // 简单的HTML解析函数 - 从网页中提取企业信息
 function parseHTML(html, url) {
     try {
