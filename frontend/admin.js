@@ -636,7 +636,7 @@ function stopCrawling() {
 // 加载分类树结构
 function loadCategoryTree() {
     // 构建分类API地址
-    let categoriesApiUrl = 'http://localhost:3000/api/categories';
+    let categoriesApiUrl = import.meta.env.VITE_API_URL+'/api/categories';
     
     // 检查是否有全局配置
     if (window && window.appConfig && window.appConfig.apiUrl) {

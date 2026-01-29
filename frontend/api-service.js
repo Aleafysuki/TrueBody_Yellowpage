@@ -6,7 +6,8 @@
 class ApiService {
     constructor() {
         // API基础URL - 从环境变量或全局配置读取，默认为truebody.zeabur.app/api
-        let apiBaseUrl = 'http://localhost:3000/api';//let apiBaseUrl = 'http://121.41.109.106:3000/api';
+        //let apiBaseUrl = 'http://localhost:3000/api';
+        let apiBaseUrl = 'http://121.41.109.106:3000/api';
         
         // 检查是否有全局配置
         if (window && window.appConfig && window.appConfig.apiUrl) {
